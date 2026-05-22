@@ -129,35 +129,80 @@ a:hover { text-decoration: underline; }
 .site-footer-inner a:hover { color: var(--text); text-decoration: none; }
 
 /* --- Content page (privacy, listings, posts) --- */
-.page, .post, .listing {
+.page, .post {
     max-width: var(--max-content);
     margin: 0 auto;
-    padding: 3rem 1.5rem 2rem;
+    padding: 2rem 1.5rem 4rem;
 }
 
-.page-title, .listing-title {
-    font-size: 1.6rem;
-    margin-bottom: 0.4rem;
+.page-header {
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+}
+.page-header h1 {
+    font-size: 1.75rem;
     letter-spacing: -0.01em;
+    margin-bottom: 0.5rem;
+}
+.page-description {
+    font-size: 1rem;
+    color: var(--text-muted);
 }
 .page-date {
     font-size: 0.9rem;
     color: var(--text-muted);
-    margin-bottom: 2rem;
 }
-.page h2 {
+
+.page-content h2 {
     font-size: 1.1rem;
     margin-top: 2rem;
     margin-bottom: 0.5rem;
 }
-.page p, .page li {
+.page-content p, .page-content li {
     font-size: 0.95rem;
     color: var(--text-body);
 }
-.page ul { padding-left: 1.2rem; margin-top: 0.3rem; }
-.page li { margin-bottom: 0.35rem; }
+.page-content ul { padding-left: 1.2rem; margin-top: 0.3rem; }
+.page-content li { margin-bottom: 0.35rem; }
 
-/* --- Post (blog / release) --- */
+/* --- Post listing (blog / release index) --- */
+.post-list { list-style: none; }
+.post-list li {
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--border);
+}
+.post-list li:last-child { border-bottom: none; }
+.post-list a {
+    display: block;
+    color: var(--text);
+}
+.post-list a:hover { text-decoration: none; }
+.post-list a:hover h3 { color: var(--text-muted); }
+.post-list time {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    display: block;
+    margin-bottom: 0.25rem;
+}
+.post-list h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.35rem;
+    transition: color 0.15s ease;
+    letter-spacing: -0.01em;
+}
+.post-list .post-excerpt {
+    font-size: 0.95rem;
+    color: var(--text-body);
+}
+.post-list-empty {
+    padding: 3rem 0;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* --- Single post (blog/release detail) --- */
 .post-meta {
     font-size: 0.88rem;
     color: var(--text-muted);
@@ -193,27 +238,3 @@ a:hover { text-decoration: underline; }
     margin: 2.5rem 0 1.5rem;
 }
 .post-body strong { color: var(--text); }
-
-/* --- Listing --- */
-.listing-title { margin-bottom: 2rem; }
-.post-list { list-style: none; padding: 0; }
-.post-list li {
-    padding: 1.2rem 0;
-    border-bottom: 1px solid var(--border);
-}
-.post-list li:last-child { border-bottom: none; }
-.post-list a { display: block; color: var(--text); }
-.post-list a:hover { text-decoration: none; }
-.post-list h2 {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 0.3rem;
-}
-.post-list .post-list-date {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-}
-.post-list-empty {
-    color: var(--text-muted);
-    font-size: 0.95rem;
-}

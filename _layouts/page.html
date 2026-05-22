@@ -1,8 +1,18 @@
 ---
 layout: default
 ---
-<article class="page container">
-    {% if page.title %}<h1 class="page-title">{{ page.title }}</h1>{% endif %}
-    {% if page.date %}<p class="page-date">시행일: {{ page.date | date: "%Y년 %-m월 %-d일" }}</p>{% endif %}
-    {{ content }}
-</article>
+<section class="page">
+    {% if page.title %}
+    <header class="page-header">
+        <h1>{{ page.title }}</h1>
+        {% if page.description %}
+            <p class="page-description">{{ page.description }}</p>
+        {% elsif page.date %}
+            <p class="page-date">시행일: {{ page.date | date: "%Y년 %-m월 %-d일" }}</p>
+        {% endif %}
+    </header>
+    {% endif %}
+    <div class="page-content">
+        {{ content }}
+    </div>
+</section>

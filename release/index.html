@@ -1,23 +1,22 @@
 ---
-layout: default
-title: 릴리즈노트
+layout: page
+title: 릴리즈 노트
+description: 버전별 새로운 기능과 개선 사항
 permalink: /release/
 ---
-<section class="listing container">
-    <h1 class="listing-title">릴리즈노트</h1>
-    {% assign release_posts = site.posts | where: "categories", "release" %}
-    {% if release_posts.size == 0 %}
-        <p class="post-list-empty">아직 발행된 릴리즈노트가 없습니다.</p>
-    {% else %}
-    <ul class="post-list">
-        {% for post in release_posts %}
-        <li>
-            <a href="{{ post.url | relative_url }}">
-                <h2>{{ post.title }}</h2>
-                <p class="post-list-date">{{ post.date | date: "%Y년 %-m월 %-d일" }}</p>
-            </a>
-        </li>
-        {% endfor %}
-    </ul>
-    {% endif %}
-</section>
+{% assign release_posts = site.posts | where_exp: "p", "p.categories contains 'release'" %}
+{% if release_posts.size > 0 %}
+<ul class="post-list">
+    {% for post in release_posts %}
+    <li>
+        <a href="{{ post.url | relative_url }}">
+            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y년 %-m월 %-d일" }}</time>
+            <h3>{{ post.title }}</h3>
+            {% if post.description %}<p class="post-excerpt">{{ post.description }}</p>{% endif %}
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p class="post-list-empty">아직 발행된 릴리즈노트가 없습니다.</p>
+{% endif %}
