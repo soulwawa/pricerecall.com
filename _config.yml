@@ -11,6 +11,15 @@ kramdown:
 
 permalink: /:categories/:title/
 
+# Asia/Seoul 기준으로 날짜 처리. UTC 빌드 서버에서도 KST 오늘 발행이 future 처리 안 되도록 future:true.
+timezone: Asia/Seoul
+future: true
+
+# GitHub Pages safe mode 에선 plugins: 리스트가 있어야 활성화됨 (Gemfile 만으론 부족).
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
 # 자주 참조하는 외부 링크
 app_store_url: https://apps.apple.com/kr/app/id6768031093
 github_url: https://github.com/soulwawa/price-recal
