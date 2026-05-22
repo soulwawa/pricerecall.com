@@ -4,10 +4,10 @@
     {% include head.html %}
 </head>
 <body class="{{ page.body_class }}">
-    {% unless page.hide_header %}{% include header.html %}{% endunless %}
-    <main class="site-main">
+    {% include header.html %}
+    <main>
         {{ content }}
     </main>
-    {% unless page.hide_footer %}{% include footer.html %}{% endunless %}
+    {% include footer.html %}
 </body>
 </html>
