@@ -1,0 +1,33 @@
+title: 얼마였지?
+description: 반복 구매 상품의 가격을 기록하고 비교하는 iOS 앱
+url: https://pricerecall.com
+baseurl: ""
+lang: ko
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+permalink: /:categories/:title/
+
+# 자주 참조하는 외부 링크
+app_store_url: https://apps.apple.com/kr/app/id6768031093
+github_url: https://github.com/soulwawa/price-recal
+contact_email: soulwawa85@gmail.com
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .bundle
+  - README.md
+  - CLAUDE.md
+  - .DS_Store
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post

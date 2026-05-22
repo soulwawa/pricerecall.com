@@ -1,0 +1,23 @@
+---
+layout: default
+title: 블로그
+permalink: /blog/
+---
+<section class="listing container">
+    <h1 class="listing-title">블로그</h1>
+    {% assign blog_posts = site.posts | where: "categories", "blog" %}
+    {% if blog_posts.size == 0 %}
+        <p class="post-list-empty">아직 발행된 글이 없습니다.</p>
+    {% else %}
+    <ul class="post-list">
+        {% for post in blog_posts %}
+        <li>
+            <a href="{{ post.url | relative_url }}">
+                <h2>{{ post.title }}</h2>
+                <p class="post-list-date">{{ post.date | date: "%Y년 %-m월 %-d일" }}</p>
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</section>

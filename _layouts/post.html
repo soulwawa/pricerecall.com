@@ -1,0 +1,14 @@
+---
+layout: default
+---
+<article class="post container">
+    <p class="post-meta">
+        <a href="{{ '/' | append: page.categories[0] | append: '/' | relative_url }}">{% if page.categories[0] == 'release' %}릴리즈{% else %}블로그{% endif %}</a>
+        <span class="sep">·</span>
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y년 %-m월 %-d일" }}</time>
+    </p>
+    <h1 class="post-title">{{ page.title }}</h1>
+    <div class="post-body">
+        {{ content }}
+    </div>
+</article>

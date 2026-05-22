@@ -1,0 +1,8 @@
+---
+layout: default
+---
+<article class="page container">
+    {% if page.title %}<h1 class="page-title">{{ page.title }}</h1>{% endif %}
+    {% if page.date %}<p class="page-date">시행일: {{ page.date | date: "%Y년 %-m월 %-d일" }}</p>{% endif %}
+    {{ content }}
+</article>

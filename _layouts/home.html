@@ -1,0 +1,20 @@
+---
+layout: default
+hide_header: true
+body_class: home
+---
+<section class="hero">
+    <div class="container hero-inner">
+        <h1 class="hero-title">얼마였지?</h1>
+        <p class="hero-sub">반복 구매 상품의 가격을 기록하고 비교하세요.</p>
+        <a href="{{ site.app_store_url }}" class="cta">App Store에서 받기</a>
+        <nav class="hero-nav">
+            <a href="{{ '/release/' | relative_url }}">릴리즈노트</a>
+            <span class="sep">·</span>
+            <a href="{{ '/blog/' | relative_url }}">블로그</a>
+            <span class="sep">·</span>
+            <a href="{{ '/privacy/' | relative_url }}">개인정보</a>
+        </nav>
+    </div>
+</section>
+{{ content }}
