@@ -1,0 +1,9 @@
+{% if site.analytics.measurement_id %}
+<script defer id="site-analytics" src="{{ '/assets/js/analytics.js' | relative_url }}"
+    data-measurement-id="{{ site.analytics.measurement_id | escape }}"
+    data-enabled="{{ site.analytics.enabled }}"
+    data-automatic-outbound-disabled="{{ site.analytics.automatic_outbound_disabled }}"
+    data-production-origin="{{ site.url | escape }}"
+    data-page-url="{{ page.url | absolute_url | escape }}"
+    data-store-url="{{ site.app_store_url | escape }}"></script>
+{% endif %}

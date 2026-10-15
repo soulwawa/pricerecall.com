@@ -1,6 +1,15 @@
 <footer class="site-footer">
     <div class="site-footer-inner">
         <a href="{{ '/privacy/' | relative_url }}">개인정보 처리방침</a>
+        <a href="{{ '/privacy/#web-analytics' | relative_url }}" data-analytics-settings>웹 분석 설정</a>
         <span>© 2026 얼마였지?</span>
     </div>
 </footer>
+<section id="analytics-consent" class="analytics-consent" aria-label="웹 방문 분석 선택" hidden>
+    <p>Google Analytics로 웹 방문·유입과 App Store 이동 클릭을 분석해도 될까요? 동의 전에는 분석 스크립트를 불러오지 않습니다. 거부해도 사이트와 설치 링크를 이용할 수 있습니다.</p>
+    <p><a href="{{ '/privacy/#web-analytics' | relative_url }}">웹 분석 안내</a> · 선택은 하단의 웹 분석 설정에서 다시 바꿀 수 있습니다.</p>
+    <div class="analytics-choices">
+        <button type="button" data-analytics-choice="denied">분석 거부</button>
+        <button type="button" data-analytics-choice="granted">분석 허용</button>
+    </div>
+</section>

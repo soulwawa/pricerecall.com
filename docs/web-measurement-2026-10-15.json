@@ -1,0 +1,78 @@
+{
+  "status": "소스·오프라인 검사 완료 / 기존 Pages 배포 준비",
+  "authorization": {
+    "source_thread": "01a125cd-6f0f-7c63-be12-0c83c6cc3bbe",
+    "source_user_turn": "01a13e4a-3386-7d83-9c6d-fb03222cf1a6",
+    "reference": "/Users/eee/dev/app-growth/research/google-web-connection-2026-10-15.md",
+    "scope": "PriceRecall 사이트 GA4·Search Console 연결, 동의·웹 분석 안내, 기존 commit/push/Pages 배포·공개 확인. 앱·스토어·새 콘텐츠·광고·DNS·키/권한·공통 수집기/대시보드/예약 변경 없음."
+  },
+  "site": {
+    "origin": "https://pricerecall.com",
+    "repository": "soulwawa/pricerecall.com",
+    "app_store_url": "https://apps.apple.com/kr/app/id6768031093",
+    "ga4_measurement_id": "G-TE155ZWG3F",
+    "ga4_stream_id": "16132825720",
+    "ga4_property_id": "559121178",
+    "timezone": "Asia/Seoul",
+    "google_site_verification": "ffJepf8F51W8VQszTW5hKwCE42pprSGmpXxenJO5VHE"
+  },
+  "google_configuration_source": "성장 담당이 Google 화면에서 확인해 전달한 실제 값과 최종 계약. 이 담당은 Google 계정/권한/스트림 설정을 중복 조작하지 않았다.",
+  "root_confirmed_configuration": {
+    "enhanced_measurement": "전체 OFF (초기 page/outbound ON 안내를 최종 계약이 대체)",
+    "developer_traffic_exclusion": "Root가 활성 상태 확인. 실제 적용 지연 및 10/15 초기 검증일 분리는 Root가 판단.",
+    "receipt_and_reporting_verification_owner": "성장 담당 Root"
+  },
+  "event_contract": {
+    "page_view": "명시적 동의 후 페이지별 1회. send_page_view:false. Jekyll의 고정 page.url로 page_location을 구성하고 referrer는 origin만 사용.",
+    "click": {
+      "event_name": "click",
+      "outbound": true,
+      "link_domain": "apps.apple.com",
+      "link_url": "https://apps.apple.com/kr/app/id6768031093",
+      "bounds": "같은 앱 ID의 HTTPS apps.apple.com 링크만. query·fragment·링크 문구·이메일/계정·앱 기록 미전송. navigation을 지연/차단하지 않는다."
+    },
+    "debug_mode": "analytics_debug=1일 때만 true. 일반 방문에는 config/event 모두 필드 자체를 생략하며 false를 보내지 않는다.",
+    "sample_limits": "동의하고 측정 가능한 웹 세션 표본. 클릭은 앱 설치가 아니며 초기 설정/테스트 데이터와 고객 성과를 구분한다."
+  },
+  "source_plan": {
+    "branch": "codex/ga4-consent-measurement",
+    "base_commit": "bf603af09aee8136a0c29dd0faf463a2af829eed",
+    "files": ["_config.yml", "_includes/analytics.html", "_includes/head.html", "_includes/footer.html", "assets/js/analytics.js", "assets/css/main.css", "privacy/index.html", "tests/analytics.test.cjs"],
+    "search_console_meta": "기존 jekyll-seo-tag의 webmaster_verifications.google 지원을 재사용한다. 별도 중복 meta를 추가하지 않는다.",
+    "consent": "Google script는 동의 전/거부 시 로드하지 않는다. 선택 변경·철회·다른 탭의 거부를 반영하고 광고 동의는 denied로 유지한다.",
+    "production_guard": "정확한 https://pricerecall.com origin과 실제 G-ID, 수동 측정/자동 outbound OFF 확인값이 있어야 측정한다. localhost/미리보기/다른 hostname에서는 보내지 않는다.",
+    "test_and_document_publication": "tests와 docs는 Jekyll exclude에 포함해 테스트용 ID·기술 기록을 배포하지 않는다."
+  },
+  "preserved_user_changes": {
+    "file": "CLAUDE.md",
+    "initial_diff_sha256": "2548b2a7aaacf09e6fb3ea64ae09c4507be3e0e3e9a35bc4169c8095cc5e1641",
+    "not_part_of_measurement_commit": true
+  },
+  "checks": {
+    "node_syntax": "passed",
+    "offline_consent_privacy_click_tests": {"passed": 10, "failed": 0},
+    "debug_parameter_targeted_recheck": {"passed": 3, "failed": 0},
+    "git_diff_check": "passed",
+    "baseline_locked_jekyll": "bundle check failed: github-pages231/Jekyll3.9.5 등 기존 lock 버전이 현재 로컬 환경에 없음",
+    "installed_renderer_attempt": "기존 설치 Jekyll3.9.0/Liquid4.0.3은 Ruby4에서 tainted? 오류로 실패. gem·lock·전역 Ruby 설정을 수정하지 않았다.",
+    "production_build_validation": "기존 Pages(main /) 빌드와 공개 HTML에서 별도 확인 예정",
+    "no_google_event_sent_yet_by_this_owner": true
+  },
+  "deployment": {
+    "commit": null,
+    "pushed_at_kst": null,
+    "pages_build_status": null,
+    "public_confirmed_at_kst": null,
+    "public_meta_verified": false,
+    "consent_browser_verified": false,
+    "debug_transmission_verified": false,
+    "google_receiver_verified": false
+  },
+  "rollback": "analytics.enabled:false를 이 변경만의 후속 커밋으로 기존 Pages에 배포하면 새 로딩/전송을 중지한다. 전체 복원은 이 측정 커밋만 revert한다. 기존 CLAUDE 변경·도메인·게시물·앱·다른 저장소를 reset/stash/되돌리지 않는다. Google 속성/소유권/인증 삭제는 범위 밖이다.",
+  "official_references": [
+    "https://developers.google.com/analytics/devguides/collection/ga4/views",
+    "https://developers.google.com/tag-platform/security/guides/privacy",
+    "https://developers.google.com/tag-platform/security/concepts/consent-mode",
+    "https://support.google.com/analytics/answer/7201382?hl=en"
+  ]
+}

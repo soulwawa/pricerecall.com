@@ -25,6 +25,15 @@ app_store_url: https://apps.apple.com/kr/app/id6768031093
 github_url: https://github.com/soulwawa/price-recal
 contact_email: soulwawa85@gmail.com
 
+# 성장 담당이 향상된 측정 전체 OFF·Developer Traffic 제외 활성화를 확인했다.
+analytics:
+  measurement_id: G-TE155ZWG3F
+  enabled: true
+  automatic_outbound_disabled: true
+
+webmaster_verifications:
+  google: ffJepf8F51W8VQszTW5hKwCE42pprSGmpXxenJO5VHE
+
 exclude:
   - Gemfile
   - Gemfile.lock
@@ -33,6 +42,8 @@ exclude:
   - README.md
   - CLAUDE.md
   - .DS_Store
+  - docs
+  - tests
 
 defaults:
   - scope:
