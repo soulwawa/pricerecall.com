@@ -112,7 +112,7 @@
         if (!value) return;
         try { window.localStorage.setItem(storageKey, value); } catch {}
         applyChoice(value);
-        settings[0]?.focus();
+        settings[0]?.focus({ preventScroll: true });
     });
     for (const link of settings) link.addEventListener('click', event => {
         event.preventDefault();

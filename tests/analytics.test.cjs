@@ -14,7 +14,7 @@ function fixture(options = {}) {
     const element = dataset => ({
         dataset, handlers: {}, hidden: true,
         addEventListener(type, callback) { this.handlers[type] = callback; },
-        focus() { this.focused = true; }
+        focus(options) { this.focused = true; this.focusOptions = options; }
     });
     const panel = element({});
     const deny = element({ analyticsChoice: 'denied' });
@@ -116,6 +116,7 @@ test('정확한 앱 클릭만 canonical 목적지로 한 번 보내며 navigatio
 test('거부로 변경하면 전송을 중지하고 GA 쿠키만 만료한다', () => {
     const f = fixture({ consent: 'granted' }); f.load();
     f.choose('denied'); f.click(store);
+    assert.equal(f.settings.focusOptions.preventScroll, true);
     assert.equal(f.window['ga-disable-G-TESTONLY123'], true);
     assert.equal(f.events('click').length, 0);
     assert.equal(f.cookieWrites.every(cookie => /^_ga(?:_TESTONLY123)?=; Max-Age=0;/.test(cookie)), true);
