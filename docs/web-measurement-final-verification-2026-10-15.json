@@ -1,0 +1,66 @@
+{
+  "status": "PriceRecall 사이트 측 구현·기존 Pages 배포·공개·동의·debug 요청 관측 완료",
+  "scope": "pricerecall.com만. Google 계정/수신·Search Console 소유권/보고·공통 대시보드·매일 수집은 Root 담당이며 완료를 대체하지 않는다.",
+  "work_record": "docs/web-measurement-2026-10-15.json",
+  "implementation_commit": "55cb43f53c8a811512da2a5231fed85a9f6e646e",
+  "final_code_commit": "c491e14889302e8aff4c3a8aac1e27aea77bac70",
+  "final_public_js_sha256": "b248fa6d94454a4c1a107cde62f662834f7c76dad5cd62f6cfe6f84f511b14fe",
+  "final_code_pages_build": {
+    "status": "built",
+    "url": "https://api.github.com/repos/soulwawa/pricerecall.com/pages/builds/1286219801",
+    "created_at_kst": "2026-10-15T16:44:59+09:00",
+    "finished_at_kst": "2026-10-15T16:45:48+09:00",
+    "error": null
+  },
+  "final_public_source_confirmed_at_kst": "2026-10-15T16:47:09.518632+09:00",
+  "final_public_source_matches": true,
+  "last_source_change": "동의 선택 뒤의 focus에 preventScroll:true만 추가했다. 55cb43f의 측정/PII/동의/hostname/이벤트 계약은 동일하며 관련 로컬 테스트 1건만 재실행해 통과했다. 실제 Google 전송 테스트를 반복하지 않았다.",
+  "public_checks": {
+    "first_confirmed_at_kst": "2026-10-15T16:30:07.190235+09:00",
+    "pages": ["https://pricerecall.com/", "https://pricerecall.com/privacy/", "https://pricerecall.com/blog/"],
+    "all_http_200": true,
+    "loader_per_page": 1,
+    "actual_measurement_id": "G-TE155ZWG3F",
+    "verification_meta_per_page": 1,
+    "verification_meta_matches_root_value": true,
+    "tests_and_documents_http_404": true
+  },
+  "consent_and_transport": {
+    "before_consent_or_initial_denial": "Google script/resource 0개, App Store 링크 2개 유지",
+    "reopen_and_grant": "설정 링크 재선택 후 SDK 1개 로드 관측",
+    "debug_page_url": "https://pricerecall.com/?analytics_debug=1",
+    "observed_at_kst": "2026-10-15T16:37:34.750+09:00",
+    "measurement_id": "G-TE155ZWG3F",
+    "page_view_resource_entries_observed": 1,
+    "click_resource_entries_observed": 1,
+    "observed_debug_parameter": "ep.debug_mode=true (_dbg는 관측되지 않음)",
+    "observed_page_location_is_canonical": true,
+    "observed_click_link_url": "https://apps.apple.com/kr/app/id6768031093",
+    "observed_click_outbound": true,
+    "click_triggered_at_kst": "2026-10-15T16:35:58.542+09:00",
+    "revocation_at_kst": "2026-10-15T16:39:30.340+09:00",
+    "denied_link_navigation_at_kst": "2026-10-15T16:39:30.350+09:00",
+    "denied_navigation_works_and_no_additional_resource_entry_observed": true,
+    "normal_visit_debug_mode_field": "로컬 config/event 검사에서 필드 부재 확인. false를 사용하지 않음. 실제 비debug 고객 방문은 만들지 않음.",
+    "http_acknowledgement": "API에서 노출되지 않아 미검증. 204/수신/보고 집계 성공으로 확대하지 않음.",
+    "server_receive_time": null,
+    "google_debugview_or_reporting_receipt": "Root 미확인",
+    "privacy": "허용한 요청 식별 필드만 추출. cid·쿠키·이메일·인증값·전체 URL/query/header/body는 복제하지 않았다.",
+    "test_day": "2026-10-15 초기 검증일. Developer Traffic 필터의 UI 활성/실제 적용 지연 및 성과 제외는 Root에서 구분."
+  },
+  "screenshot": {
+    "path": "docs/evidence/ga4-consent-live-2026-10-15.png",
+    "sha256": "cfd5243aa50065f115d7d4254bd0d314b35d860791e59db91f0bc5c249d0de90"
+  },
+  "tests": {"offline_cases_passed": 10, "debug_contract_targeted_recheck_passed": 3, "focus_followup_case_passed": 1, "source_syntax_and_diff_check": "passed"},
+  "local_build_limit": "고정 gem이 로컬에 없고 설치된 구 Liquid는 Ruby4에서 tainted? 오류. 전역/의존성/lock 변경 없이 기존 Pages의 실제 성공 빌드와 공개 출력을 사용했다.",
+  "preservation": {
+    "existing_dirty_CLAUDE_diff_sha256": "2548b2a7aaacf09e6fb3ea64ae09c4507be3e0e3e9a35bc4169c8095cc5e1641",
+    "CLAUDE_change_excluded_from_commits": true,
+    "app_store_app_build_code_tracking_permissions_dns_ads_unchanged": true,
+    "root_common_backlog_portfolio_metrics_plan_schedules_unchanged": true,
+    "browser_validation_tabs_closed_after_revocation": true
+  },
+  "handoff": "Root는 공개 HTML 확인값으로 Search Console 소유권 확인과 Google 수신/보고·읽기 인증·대시보드/기존 일일 수집을 이어간다. 사이트 적용이나 resource 관측만으로 전체 연결 완료로 표시하지 않는다. 같은 테스트를 즉시 반복하지 않는다.",
+  "rollback": "analytics.enabled:false 후속 배포가 최소 비활성 경로다(열린 탭에 즉시 적용되는 kill switch는 아님). 전체 원복은 이 기능의 관련 커밋만 최신 역순 revert 검토하며 사용자 CLAUDE 변경과 도메인/게시물/앱/Google 속성·권한은 보존한다."
+}

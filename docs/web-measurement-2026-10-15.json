@@ -1,5 +1,5 @@
 {
-  "status": "소스·오프라인 검사 완료 / 기존 Pages 배포 준비",
+  "status": "사이트 구현·Pages 배포·공개 meta/동의/debug 요청 관측 완료 / Google 수신·소유권 최종 판정은 Root 담당",
   "authorization": {
     "source_thread": "01a125cd-6f0f-7c63-be12-0c83c6cc3bbe",
     "source_user_turn": "01a13e4a-3386-7d83-9c6d-fb03222cf1a6",
@@ -55,20 +55,53 @@
     "git_diff_check": "passed",
     "baseline_locked_jekyll": "bundle check failed: github-pages231/Jekyll3.9.5 등 기존 lock 버전이 현재 로컬 환경에 없음",
     "installed_renderer_attempt": "기존 설치 Jekyll3.9.0/Liquid4.0.3은 Ruby4에서 tainted? 오류로 실패. gem·lock·전역 Ruby 설정을 수정하지 않았다.",
-    "production_build_validation": "기존 Pages(main /) 빌드와 공개 HTML에서 별도 확인 예정",
-    "no_google_event_sent_yet_by_this_owner": true
+    "production_build_validation": "기존 Pages(main /) 빌드 성공 및 실제 홈/블로그/개인정보 공개 HTML 검증 완료",
+    "live_validation_day": "2026-10-15는 Root가 초기 검증일로 분리한다. 필터 UI 활성과 실제 적용 지연을 구분한다.",
+    "focus_correction": "동의 선택 후 footer로 화면이 갑자기 이동하지 않도록 focus({preventScroll:true})를 사용한다. 측정 계약은 변경하지 않는다."
   },
   "deployment": {
-    "commit": null,
-    "pushed_at_kst": null,
-    "pages_build_status": null,
-    "public_confirmed_at_kst": null,
-    "public_meta_verified": false,
-    "consent_browser_verified": false,
-    "debug_transmission_verified": false,
-    "google_receiver_verified": false
+    "implementation_commit": "55cb43f53c8a811512da2a5231fed85a9f6e646e",
+    "pages_build_created_at_kst": "2026-10-15T16:26:06+09:00",
+    "pages_build_finished_at_kst": "2026-10-15T16:26:47+09:00",
+    "pages_build_status": "built",
+    "pages_build_url": "https://api.github.com/repos/soulwawa/pricerecall.com/pages/builds/1286183024",
+    "public_confirmed_at_kst": "2026-10-15T16:30:07.190235+09:00",
+    "public_meta_verified": true,
+    "public_loader_per_checked_page": 1,
+    "public_verification_meta_per_checked_page": 1,
+    "public_checked_pages": ["/", "/privacy/", "/blog/"],
+    "tests_and_docs_public_status": 404,
+    "implementation_public_js_sha256": "93a4fda44ea188c6eb771e721586fb407c97ec0e7967ed4a5755848152077d73",
+    "consent_browser_verified": true,
+    "debug_transport_resource_observed": true,
+    "google_receiver_verified": false,
+    "search_console_console_verification": "Root 담당; 이 담당은 공개 meta의 값/중복 여부만 확인"
   },
-  "rollback": "analytics.enabled:false를 이 변경만의 후속 커밋으로 기존 Pages에 배포하면 새 로딩/전송을 중지한다. 전체 복원은 이 측정 커밋만 revert한다. 기존 CLAUDE 변경·도메인·게시물·앱·다른 저장소를 reset/stash/되돌리지 않는다. Google 속성/소유권/인증 삭제는 범위 밖이다.",
+  "browser_validation": {
+    "client": "Codex in-app browser의 실제 production hostname 방문",
+    "url": "https://pricerecall.com/?analytics_debug=1",
+    "before_consent_at_kst": "2026-10-15T16:33:51.948+09:00",
+    "before_consent_google_scripts": 0,
+    "denied_at_kst": "2026-10-15T16:33:52.268+09:00",
+    "denied_google_scripts_and_observed_resources": 0,
+    "allowed_and_sdk_observed_at_kst": "2026-10-15T16:35:34.323+09:00",
+    "allowed_google_scripts": 1,
+    "requests_observed_at_kst": "2026-10-15T16:37:34.750+09:00",
+    "safe_observed_requests": [
+      {"measurement_id": "G-TE155ZWG3F", "event_name": "page_view", "consent": "granted", "debug_parameter": "ep.debug_mode", "debug_value": "true", "canonical_page_location": "https://pricerecall.com/", "resource_entries_observed": 1},
+      {"measurement_id": "G-TE155ZWG3F", "event_name": "click", "consent": "granted", "debug_parameter": "ep.debug_mode", "debug_value": "true", "canonical_page_location": "https://pricerecall.com/", "link_url": "https://apps.apple.com/kr/app/id6768031093", "outbound": true, "resource_entries_observed": 1, "click_triggered_at_kst": "2026-10-15T16:35:58.542+09:00"}
+    ],
+    "revoked_at_kst": "2026-10-15T16:39:30.340+09:00",
+    "denied_link_navigation_triggered_at_kst": "2026-10-15T16:39:30.350+09:00",
+    "denied_link_navigation_succeeded": true,
+    "denied_link_navigation_resource_entries": "이전 page_view 1건/click 1건 유지, 추가 항목 관측 없음",
+    "exact_server_received_at": null,
+    "http_response_status": null,
+    "limits": "제공된 pageAssets resource inventory에서 query의 허용 필드만 추출했다. HTTP 상태나 서버 도착 시각을 제공하지 않아 204/수신 완료로 주장하지 않는다. inventory는 URL을 합칠 수 있으므로 raw HAR 수준의 전체 요청 횟수 증명은 아니다. _dbg는 없고 ep.debug_mode=true가 관측됐다. cid·쿠키·인증값·전체 요청 URL/헤더/본문은 기록하지 않았다.",
+    "screenshot": "docs/evidence/ga4-consent-live-2026-10-15.png"
+  },
+  "final_verification_file": "docs/web-measurement-final-verification-2026-10-15.json",
+  "rollback": "analytics.enabled:false를 이 변경만의 후속 커밋으로 기존 Pages에 배포하면 새 페이지의 로딩/전송을 중지한다. 이미 열린 탭에 즉시 반영되는 중단 장치는 아니다. 전체 복원은 이 기능의 측정/후속 커밋만 최신 역순으로 revert 검토한다. 기존 CLAUDE 변경·도메인·게시물·앱·다른 저장소를 reset/stash/되돌리지 않는다. Google 속성/소유권/인증 삭제는 범위 밖이다.",
   "official_references": [
     "https://developers.google.com/analytics/devguides/collection/ga4/views",
     "https://developers.google.com/tag-platform/security/guides/privacy",
