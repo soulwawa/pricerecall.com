@@ -13,10 +13,30 @@ description: "묶음 수가 다른 기저귀 가격을 한 장 단가로 비교�
 
 같은 브랜드·제품·사이즈이고 한 묶음에 33매가 들어 있다고 가정해 보겠습니다.
 
+<style>
+#bundle-price-example { width: 100%; table-layout: fixed; border-collapse: collapse; margin: 1.25rem 0; background: #fff; font-size: .9375rem; line-height: 1.6; font-variant-numeric: tabular-nums; }
+#bundle-price-example th, #bundle-price-example td { padding: .75rem .625rem; border-bottom: 1px solid #d9dfea; vertical-align: middle; }
+#bundle-price-example th + th, #bundle-price-example td + td { border-left: 1px solid #e4e8f0; }
+#bundle-price-example th { background: #eef2f8; border-bottom: 2px solid #cbd5e1; color: #1a1a2e; font-weight: 700; word-break: keep-all; }
+#bundle-price-example th:first-child, #bundle-price-example td:first-child { width: 30%; text-align: left; word-break: keep-all; }
+#bundle-price-example th:nth-child(2), #bundle-price-example td:nth-child(2) { width: 22%; }
+#bundle-price-example th:nth-child(3), #bundle-price-example td:nth-child(3) { width: 28%; }
+#bundle-price-example th:nth-child(4), #bundle-price-example td:nth-child(4) { width: 20%; }
+#bundle-price-example th:nth-child(n+2), #bundle-price-example td:nth-child(n+2) { text-align: right; }
+#bundle-price-example td:nth-child(n+2), #bundle-price-example .bundle-count { white-space: nowrap; }
+#bundle-price-example .bundle-count { display: inline-block; }
+#bundle-price-example tbody tr:nth-child(even) { background: #f6f8fc; }
+@media (max-width: 400px) {
+    #bundle-price-example { font-size: .875rem; }
+    #bundle-price-example th, #bundle-price-example td { padding: .7rem .375rem; }
+}
+</style>
+
 | 구매 구성 | 총수량 | 구매 금액 | 한 장 가격 |
 | --- | ---: | ---: | ---: |
-| 33매 × 네 묶음 | 132매 | 39,600원 | 300원 |
-| 33매 × 여섯 묶음 | 198매 | 53,460원 | 270원 |
+| 33매 × <span class="bundle-count">네 묶음</span> | 132매 | 39,600원 | 300원 |
+| 33매 × <span class="bundle-count">여섯 묶음</span> | 198매 | 53,460원 | 270원 |
+{: #bundle-price-example}
 
 여섯 묶음의 결제 총액은 더 크지만 한 장 가격은 더 낮습니다. **위 금액은 계산 설명용 가상 예시이며 현재 판매가나 절약 보장이 아닙니다.** 제품·사이즈·구성이 다르면 가격만으로 같은 상품처럼 비교하지 마세요.
 
