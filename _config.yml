@@ -41,6 +41,7 @@ exclude:
   - .bundle
   - README.md
   - CLAUDE.md
+  - AGENTS.md
   - .DS_Store
   - docs
   - tests
